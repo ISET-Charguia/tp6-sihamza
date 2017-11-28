@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char remplace( char *x ,char *y , char *z);
+void remplace( char *x ,char *y , char *z);
 int main()
-{   char a[100],b[100],c[100];
-    printf("donner une chaine / old char / new char  :");
-    scanf("%s/%s/%s",&a,&b,&c);
+{   char a[100],b,c;
+    do {
+    printf("donner une chaine : \n");
+    gets(a);
+    printf("old char : \n");
+    scanf("%s",&b);
+    printf("new char  : \n");
+    scanf("%s",&c);}
+    while (c==b) ;
     remplace(a,b,c);
     printf("le resultat = %s",a);
 
@@ -13,15 +19,15 @@ int main()
 }
 
 
-char remplace( char *x ,char *y , char *z)
-{   char ch[100];
-    int i ;
-    strcat(ch,"");
+void remplace( char *x ,char *y , char *z)
+{   int i ;
+    char ch [100];
+    strcpy(ch,"");
     for ( i = 0 ; i <strlen(x) ; i ++ )
-    {  if (ch[i] == y)
-       ch[i] = z;
+    {  if (x[i] == y)
+       stracat(ch,z);
        else
-       ch[i] = x[i];
+       strcat(ch,x[i]);
     }
-    *x=ch ;
+     x = ch ;
 }
