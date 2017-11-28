@@ -14,10 +14,10 @@ int main()
 void conj  ( char *x )
 {   char ch[100];
     int i ;
-    if ((x[strlen(x)] != 'r') || (x[strlen(x)-1] != 'e'))
+    if ((x[strlen(x)-1] != 'r') || (x[strlen(x)-2] != 'e'))
         printf(" ERROR  ");
     else
-    { for ( i = 0 ; i<strlen(x)-1 ; i ++ )
-    {ch[i] = x[i] ;} }
-    printf(" je %s e \n tu %s es \n il %s ",ch,ch,ch);
+    {strncpy(ch,x,strlen(x)-2);
+    ch[strlen(x)-2] = '\0' ;
+    printf(" je %se \n tu %ses \n il %se \n nous %sons \n vous %sez \n ils %sent",ch,ch,ch,ch,ch,ch);}
 }
